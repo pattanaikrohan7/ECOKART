@@ -5,13 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Your E-Waste Amount</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* Styles for the Thank You message */
+    #thankYouMessage {
+      display: none;
+      text-align: center;
+      font-size: 24px;
+      margin-top: 20px;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
     <h1>Your E-Waste Amount</h1>
     <h3 id="amount">Calculating...</h3>
 
-    <button onclick="window.location.href='success.html'">Confirm Transaction</button>
+    <!-- Confirm and Cancel buttons -->
+    <button id="confirmBtn">Confirm</button>
+    <button id="cancelBtn">Cancel</button>
+
+    <!-- Thank You message -->
+    <div id="thankYouMessage">
+      <h2>Thank you for visiting! Come back again!</h2>
+    </div>
   </div>
 
   <script>
@@ -20,6 +36,23 @@
     
     // Display the generated amount
     document.getElementById('amount').textContent = `₹${randomNum}`;
+
+    // Add event listener for the Confirm button
+    document.getElementById('confirmBtn').addEventListener('click', function() {
+      // Redirect to the success page (Page 4)
+      window.location.href = 'success.html';
+    });
+
+    // Add event listener for the Cancel button
+    document.getElementById('cancelBtn').addEventListener('click', function() {
+      // Hide the amount and buttons
+      document.getElementById('amount').style.display = 'none';
+      document.getElementById('confirmBtn').style.display = 'none';
+      document.getElementById('cancelBtn').style.display = 'none';
+      
+      // Show the Thank You message
+      document.getElementById('thankYouMessage').style.display = 'block';
+    });
   </script>
 </body>
 </html>
