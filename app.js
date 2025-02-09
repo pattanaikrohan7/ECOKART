@@ -14,11 +14,11 @@ document.getElementById('transactionForm').addEventListener('submit', function (
 });
 
 function confirmTransaction(randomNum) {
-  const confirmation = confirm(`Your transaction code is: ${randomNum}\nDo you wish to proceed?`);
+  const confirmation = confirm(`Your expected amount is: ${randomNum}\nDo you wish to proceed?`);
 
   if (confirmation) {
     // If user clicks OK, process the transaction
-    alert("Transaction Successfully Completed!");
+    alert("Amount is Successfully Credited to your Bank Account!");
   } else {
     // If user clicks Cancel, show thank you message
     alert("Thank you for visiting. Come back again!");
