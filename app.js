@@ -24,18 +24,43 @@ document.getElementById('EKOKARTForm').addEventListener('submit', function (e) {
   // Generate a random number between 100 and 1000 (representing the expected amount)
   const randomNum = Math.floor(Math.random() * (1000 - 100 + 1)) + 100;
 
-  // Proceed to confirmation
-  confirmTransaction(randomNum);
+  // Proceed to confirmation and show modal
+  showModal(`Your expected amount is: ₹${randomNum}\nDo you wish to proceed?`, randomNum);
 });
 
-function confirmTransaction(randomNum) {
-  const confirmation = confirm(`Your expected amount is: ₹${randomNum}\nDo you wish to proceed?`);
+function showModal(message, randomNum) {
+  const modal = document.getElementById('modal');
+  const modalMessage = document.getElementById('modalMessage');
+  const modalConfirmButton = document.getElementById('modalConfirmButton');
+  const modalCancelButton = document.getElementById('modalCancelButton');
+  const finalMessage = document.getElementById('finalMessage');
 
-  if (confirmation) {
-    // If user clicks OK, process the transaction
-    alert("Amount is Successfully Credited to your Bank Account!");
-  } else {
-    // If user clicks Cancel, show thank you message
-    alert("Thank you for visiting. Come back again!");
-  }
+  // Show the modal and update the message
+  modal.style.display = "block";
+  modalMessage.textContent = message;
+
+  // Handle the OK button click
+  modalConfirmButton.onclick = function () {
+    // Redirect to ewaste.html after successful transaction
+    window.location.href = "ewaste.html";
+  };
+
+  // Handle the Cancel button click
+  modalCancelButton.onclick = function () {
+    // Show thank you message and close the modal
+    finalMessage.textContent = "Thank you for visiting. Come back again!";
+    modal.style.display = "none";
+  };
+
+  // Close the modal when the user clicks the close button (×)
+  document.getElementById('closeModal').onclick = function () {
+    modal.style.display = "none";
+  };
+
+  // Close the modal if the user clicks outside the modal content
+  window.onclick = function (event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  };
 }
