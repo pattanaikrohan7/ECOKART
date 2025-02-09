@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your E-Waste Amount</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Your E-Waste Amount</h1>
+    <h3 id="amount">Calculating...</h3>
+
+    <button onclick="window.location.href='success.html'">Confirm Transaction</button>
+  </div>
+
+  <script>
+    // Generate a random number between 100 and 1000
+    const randomNum = Math.floor(Math.random() * (1000 - 100 + 1)) + 100;
+    
+    // Display the generated amount
+    document.getElementById('amount').textContent = `₹${randomNum}`;
+  </script>
+</body>
+</html>
