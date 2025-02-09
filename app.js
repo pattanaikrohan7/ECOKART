@@ -29,34 +29,37 @@ document.getElementById('EKOKARTForm').addEventListener('submit', function (e) {
 });
 
 function showModal(message, randomNum) {
-  // Show modal with custom message
   const modal = document.getElementById('modal');
   const modalMessage = document.getElementById('modalMessage');
   const modalConfirmButton = document.getElementById('modalConfirmButton');
 
+  // Show the modal and update the message
   modal.style.display = "block";
   modalMessage.textContent = message;
 
-  // Handle OK button click
+  // Handle the OK button click
   modalConfirmButton.onclick = function () {
-    const confirmation = confirm(`Your expected amount is: ₹${randomNum}\nDo you wish to proceed?`);
-    if (confirmation) {
-      alert("Amount is Successfully Credited to your Bank Account!");
-    } else {
-      alert("Thank you for visiting. Come back again!");
-    }
+    // Process the transaction after confirmation
+    processTransaction(randomNum);
+
+    // Close the modal
     modal.style.display = "none";
   };
 
-  // Handle close button click (X)
+  // Close the modal when the user clicks the close button (×)
   document.getElementById('closeModal').onclick = function () {
     modal.style.display = "none";
   };
 
-  // Close modal when clicking outside of it
+  // Close the modal if the user clicks outside the modal content
   window.onclick = function (event) {
     if (event.target == modal) {
       modal.style.display = "none";
     }
   };
+}
+
+function processTransaction(amount) {
+  // Simulating a successful transaction (you can add your backend logic here)
+  alert(`Amount ₹${amount} is successfully credited to your bank account!`);
 }
