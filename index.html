@@ -16,11 +16,11 @@
       <input type="text" id="name" required>
 
       <label for="mobile">Mobile:</label>
-      <input type="text" id="mobile" required>
+      <input type="text" id="mobile" required pattern="^[0-9]{10}$" title="Mobile number should be 10 digits long">
 
-      <label for="address">Aadhar No (optional):</label>
-      <input type="text" id="aadhar_number">
-      
+      <label for="aadhar_number">Aadhar No (optional):</label>
+      <input type="text" id="aadhar_number" pattern="^\d{12}$" title="Aadhar number should be 12 digits">
+
       <label for="address">Address (optional):</label>
       <input type="text" id="address">
 
