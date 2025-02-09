@@ -96,17 +96,29 @@ button:hover {
   cursor: pointer;
 }
 
-#modalConfirmButton {
-  width: 100%;
+#modalConfirmButton, #modalCancelButton {
+  width: 48%;
   padding: 10px;
-  background-color: #4CAF50;
-  color: white;
-  border: none;
+  margin: 10px 1%;
   border-radius: 4px;
   font-size: 16px;
   cursor: pointer;
 }
 
+#modalConfirmButton {
+  background-color: #4CAF50;
+  color: white;
+}
+
+#modalCancelButton {
+  background-color: #f44336;
+  color: white;
+}
+
 #modalConfirmButton:hover {
   background-color: #45a049;
+}
+
+#modalCancelButton:hover {
+  background-color: #e53935;
 }
