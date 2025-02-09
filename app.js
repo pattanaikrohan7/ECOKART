@@ -33,6 +33,7 @@ function showModal(message, randomNum) {
   const modalMessage = document.getElementById('modalMessage');
   const modalConfirmButton = document.getElementById('modalConfirmButton');
   const modalCancelButton = document.getElementById('modalCancelButton');
+  const finalMessage = document.getElementById('finalMessage');
 
   // Show the modal and update the message
   modal.style.display = "block";
@@ -45,13 +46,18 @@ function showModal(message, randomNum) {
 
     // Close the modal
     modal.style.display = "none";
+
+    // Show success message
+    finalMessage.textContent = "Amount ₹" + randomNum + " is successfully credited to your bank account!";
   };
 
   // Handle the Cancel button click
   modalCancelButton.onclick = function () {
     // Close the modal if the user clicks Cancel
     modal.style.display = "none";
-    alert("Thank you for visiting. Come back again!");
+
+    // Show thank you message
+    finalMessage.textContent = "Thank you for visiting. Come back again!";
   };
 
   // Close the modal when the user clicks the close button (×)
@@ -68,6 +74,6 @@ function showModal(message, randomNum) {
 }
 
 function processTransaction(amount) {
-  // Simulating a successful transaction (you can add your backend logic here)
-  alert(`Amount ₹${amount} is successfully credited to your bank account!`);
+  // Simulating a successful transaction
+  console.log(`Amount ₹${amount} is successfully credited to your bank account!`);
 }
