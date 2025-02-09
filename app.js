@@ -22,5 +22,5 @@ document.getElementById('EKOKARTForm').addEventListener('submit', function (e) {
   }
 
   // Redirect to the ewaste.html page after form submission
-  window.location.href = "ewaste.html";  // Redirect to page 2
+  window.location.href = "ewaste.html";  // Redirect to Page 2 (Please wait page)
 });
