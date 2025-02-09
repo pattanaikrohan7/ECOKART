@@ -32,6 +32,7 @@ function showModal(message, randomNum) {
   const modal = document.getElementById('modal');
   const modalMessage = document.getElementById('modalMessage');
   const modalConfirmButton = document.getElementById('modalConfirmButton');
+  const modalCancelButton = document.getElementById('modalCancelButton');
 
   // Show the modal and update the message
   modal.style.display = "block";
@@ -44,6 +45,13 @@ function showModal(message, randomNum) {
 
     // Close the modal
     modal.style.display = "none";
+  };
+
+  // Handle the Cancel button click
+  modalCancelButton.onclick = function () {
+    // Close the modal if the user clicks Cancel
+    modal.style.display = "none";
+    alert("Thank you for visiting. Come back again!");
   };
 
   // Close the modal when the user clicks the close button (×)
