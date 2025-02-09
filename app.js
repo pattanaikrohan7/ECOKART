@@ -1,4 +1,4 @@
-document.getElementById('transactionForm').addEventListener('submit', function (e) {
+document.getElementById('EKOKARTForm').addEventListener('submit', function (e) {
   e.preventDefault();
 
   // Get input values
