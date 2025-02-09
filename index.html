@@ -16,16 +16,29 @@
       <input type="text" id="name" required>
 
       <label for="mobile">Mobile:</label>
-      <input type="text" id="mobile" required pattern="^[0-9]{10}$" title="Mobile number should be 10 digits long">
+      <input type="text" id="mobile" required>
 
       <label for="aadhar_number">Aadhar No (optional):</label>
-      <input type="text" id="aadhar_number" pattern="^\d{12}$" title="Aadhar number should be 12 digits">
+      <input type="text" id="aadhar_number">
 
       <label for="address">Address (optional):</label>
       <input type="text" id="address">
 
       <button type="submit">Next</button>
     </form>
+  </div>
+
+  <!-- Modal for confirmation -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closeModal">&times;</span>
+      <p id="modalMessage"></p>
+      <div class="modal-buttons">
+        <button id="modalConfirmButton">OK</button>
+        <button id="modalCancelButton">Cancel</button>
+      </div>
+      <p id="finalMessage" style="text-align: center; font-weight: bold; color: green;"></p>
+    </div>
   </div>
 
   <script src="app.js"></script>
