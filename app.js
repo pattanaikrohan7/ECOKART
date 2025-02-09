@@ -41,23 +41,16 @@ function showModal(message, randomNum) {
 
   // Handle the OK button click
   modalConfirmButton.onclick = function () {
-    // Process the transaction after confirmation
-    processTransaction(randomNum);
-
-    // Close the modal
-    modal.style.display = "none";
-
     // Show success message
     finalMessage.textContent = "Amount ₹" + randomNum + " is successfully credited to your bank account!";
+    modal.style.display = "none"; // Close modal after confirmation
   };
 
   // Handle the Cancel button click
   modalCancelButton.onclick = function () {
-    // Close the modal if the user clicks Cancel
-    modal.style.display = "none";
-
     // Show thank you message
     finalMessage.textContent = "Thank you for visiting. Come back again!";
+    modal.style.display = "none"; // Close modal after cancellation
   };
 
   // Close the modal when the user clicks the close button (×)
@@ -71,9 +64,4 @@ function showModal(message, randomNum) {
       modal.style.display = "none";
     }
   };
-}
-
-function processTransaction(amount) {
-  // Simulating a successful transaction
-  console.log(`Amount ₹${amount} is successfully credited to your bank account!`);
 }
